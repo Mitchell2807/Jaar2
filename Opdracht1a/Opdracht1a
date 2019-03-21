@@ -1,0 +1,57 @@
+<?php
+
+
+
+
+//class house
+class House
+{
+    //objecten aanmaken
+    private $floors;
+    private $rooms;
+    private $width;
+    private $height;
+    private $depth;
+    private $volume;
+    private $price;
+
+    public function __construct($floors, $rooms, $width, $height, $depth, $priceMeter)
+    {
+        $this->floors = $floors;
+        $this->rooms = $rooms;
+        $this->width = $width;
+        $this->height = $height;
+        $this->depth = $depth;
+        $this->priceMeter = $priceMeter;
+        $this->volume = $this->width * $this->height * $this->depth;
+        $this->price = $this->volume * $this->priceMeter;
+    }
+
+    public function getHouse()
+    {
+        return "Verdiepingen: ". $this->floors . "<br>
+                Kamers: " . $this->rooms . "<br>
+                Breedte: ". $this->width . " meter <br>
+                Lengte: ". $this->depth . " meter <br>
+                Hoogte: ". $this->height . " meter <br>
+                Inhoud: ". $this->volume . " m3<br>
+                Prijs: ". $this->price . " <br>";
+    }
+}
+
+$house1 = new House( 5, 10, 9, 8, 500,300);
+$house2 = new House(2, 3, 8, 6, 6, 500);
+$house3 = new House(4, 7, 10, 12, 5.5, 500);
+
+//print huizen
+//huis1
+print 'Huis 1 <br>';
+print $house1->getHouse();
+
+//huis2
+print '<br>Huis 2 <br>';
+print $house2->getHouse();
+
+//huis3
+print '<br>Huis 3 <br>';
+print $house3->getHouse();
